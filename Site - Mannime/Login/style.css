@@ -1,0 +1,98 @@
+
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    margin: 0;
+    background-image: url(https://i.pinimg.com/originals/c8/b9/a1/c8b9a19f3ea9f43f5a8d76916ef00495.png);
+    background-size: cover;
+}
+
+.header {
+    border-bottom: 3px solid #000000;
+    background-color: white;
+}
+
+.header img{
+    width: 50px;
+    vertical-align: middle;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+.container h1{
+    text-align: center;
+    margin: auto;
+    padding: 15px;
+}
+
+
+.header .container {
+    justify-content: space-between;
+}
+
+.boxes{
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+    width: 20%;
+}
+
+.box{
+    background-color: #ffffff;
+    padding: 40px;
+    border: 3px black solid;
+    border-radius: 10px;
+}
+
+.box input{
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.box label{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.botoes{
+    gap: 30px;
+    border-radius: 10px;
+}
+
+.botoes button{
+    margin: auto;
+    padding: 10px;
+    border-radius: 20px;
+    transition: 0.3s;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+}
+
+.botoes button:hover{
+    padding: 15px;
+    background-color: #000000;
+    color: white;
+}
+
+.Entrada h4{
+    text-align: center;
+    margin: auto;
+    padding: 2px;
+}
+
+.botoes a{
+    text-decoration: none;
+    color: #000000;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transition: 0.3s;
+}
+
+.botoes a:hover{
+    color: rgb(36, 144, 121);
+    
+}
