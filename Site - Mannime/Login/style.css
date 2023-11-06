@@ -96,3 +96,9 @@ body {
     color: rgb(36, 144, 121);
     
 }
+
+#saida{
+    padding: 10px;
+    color: red;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

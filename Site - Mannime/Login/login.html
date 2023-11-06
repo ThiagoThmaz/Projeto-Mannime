@@ -26,12 +26,15 @@
                     <label for="senha">Senha</label>
                     <input type="password" id="senha" placeholder="Digite sua senha"><br><br>
                     <div class="botoes">
-                        <button>
+                        <button onclick="logarComConta()">
                             Entrar
                         </button><br><br>
                         <a id="passagem" href="../Cadastro/Cadastro.html">
                             Faça seu cadastro
-                        </a>
+                        </a><br><br>
+                        <span id="saida">
+
+                        </span>
                     </div>
                 </div>
             </div>
@@ -40,3 +43,18 @@
 </body>
 
 </html>
+
+<script>
+    function logarComConta() {
+        var suaSenha = senha.value;
+        var seuEmail = email.value;
+
+        if (seuEmail == '') {
+            saida.innerHTML = 'Digite seu Email!!'
+        } else if (suaSenha == '') {
+            saida.innerHTML = 'Digite sua Senha!!'
+        } else {
+            saida.innerHTML = 'Você sera redirecionado'
+        };
+    }
+</script>
