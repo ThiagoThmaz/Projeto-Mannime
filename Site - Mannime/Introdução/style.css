@@ -1,6 +1,7 @@
 body {
     margin: 0;
-    background-color: cadetblue;
+    background-image: url(https://w0.peakpx.com/wallpaper/219/648/HD-wallpaper-minimalist-minimalistic-anime.jpg);
+    background-size: cover;
 }
 
 .header {
@@ -21,20 +22,41 @@ body {
     vertical-align: middle;
 }
 
-.content{
-    margin-top: 100px;
-    background-color: cadetblue;
-}
-
 .content .boxes{
-    background-color: white;
     justify-content: space-around;
     display: flex;
     margin: auto;
-    border: 3px black solid;
-    padding: 70px;
+    padding: 50px;
     width: 80%;
     border-radius: 20px;
+}
+
+.content h1{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    text-shadow: black ;
+
+}
+
+.boxes a{
+    text-decoration: none;
+    color: black;
+}
+
+.box{
+    background-color: white;
+    border: 2px black solid;
+    border-radius: 20px;
+    padding: 20px;
+    transition: 0.5s;
+}
+
+.box:hover{
+    background-color: brown;
+    color: white;
+    padding: 20px;
+    padding-top: 10px;
+    cursor: pointer;
 }
 
 .box h3{
@@ -44,4 +66,13 @@ body {
 
 .box img{
     height: 200px;
+    margin: 40px;
 }
+
+.box p{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+}
+
+
+
