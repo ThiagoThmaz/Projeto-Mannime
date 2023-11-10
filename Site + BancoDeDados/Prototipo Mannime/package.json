@@ -1,0 +1,23 @@
+{
+  "name": "site",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node ./site/app.js",
+    "dev": "cd site && npm run dev",
+    "postinstall": "cd site && npm install"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "middleware": "^1.0.0",
+    "node-modules": "^1.0.1",
+    "path": "^0.12.7"
+  },
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {},
+  "description": ""
+}

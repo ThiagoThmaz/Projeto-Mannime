@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="./js/sessao.js"></script>
+    <title>Cadastro</title>
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <h1 class="titulo"><img src="public/img/Icon.png">Mannime Library</h1>
+        </div>
+    </div>
+    <section class="content">
+        <div class="boxes">
+            <div class="box">
+                <div class="Entrada">
+                    <h4>Faça seu Cadastro</h4><br>
+                    <label for="title">Digite seu Nome</label>
+                    <input type="text" id="int_nome" placeholder="Digite seu Nome">
+                </div><br><br>
+                <div class="Entrada">
+                    <label for="email">Digite um E-mail</label>
+                    <input type="email" id="int_email" placeholder="Digite seu e-mail">
+                </div><br><br>
+                <div class="Entrada">
+                    <label for="senha">Digite uma Senha</label>
+                    <input type="password" id="int_senha" placeholder="Digite sua senha">
+                    <div class="Entrada"><br><br>
+                        <label for="cpf">Informe seu CPF</label>
+                        <input type="email" id="int_cpf" placeholder="Digite seu CPF">
+                    </div><br><br>
+                    <div class="botoes">
+                        <button onclick="cadastrar()">
+                            Cadastrar
+                        </button><br><br>
+                        <a id="passagem" href="../Login/login.html">
+                            Faça login
+                        </a>
+                        <div id="saida">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
+
+<script>
+
+    function cadastrar() {
+        var seuNome = int_nome.value;
+        var seuEmail = int_email.value;
+        var suaSenha = int_senha.value;
+        var seuCpf = int_cpf.value;
+
+        fetch("usuario/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-type": "application/json",
+            },
+            body: JSON.stringify({
+                nomeServer: seuNome,
+                emailServer: seuEmail,
+                senhaServe: suaSenha,
+                cpfServe: seuCpf,
+            })
+        })
+            .then(response => response.json())
+            .then(data => {
+                // Handle the response data
+                console.log(data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    }
+
+</script>
