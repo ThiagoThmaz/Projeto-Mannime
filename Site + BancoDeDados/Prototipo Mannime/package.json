@@ -11,6 +11,7 @@
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "middleware": "^1.0.0",
+    "mssql": "^10.0.1",
     "node-modules": "^1.0.1",
     "path": "^0.12.7"
   },
@@ -18,6 +19,5 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {},
   "description": ""
 }

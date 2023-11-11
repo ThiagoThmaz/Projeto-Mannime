@@ -1,7 +1,7 @@
-var mysql = require("mysql2");
+var mysql = require("mssql");
 
 var mySqlConfig = {
-    host: "localhost:3333",
+    host: "localhost",
     database: "Mannime",
     user: "root",
     password: "root"
@@ -49,5 +49,5 @@ function cadastrar(instrucao) {
 }
 
 module.exports = {
-    executar
+    cadastrar
 }

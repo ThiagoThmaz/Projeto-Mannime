@@ -1,4 +1,4 @@
-var usuarioModel = require("../controllers/usuarioController.js");
+var usuarioModel = require("../models/UsuarioModels");
 
 function autenticar(req, res) {
     var email = req.body.emailServer;
@@ -14,7 +14,7 @@ function autenticar(req, res) {
         usuarioModel.autenticar(email, senha, nome, cpf)
             .then(function (resultadoAutenticar) {
                 console.log(`\nResultados encontrados: ${resultadoAutenticar.length}`);
-                console.log(`Resultados: ${JSON.stringify(resultadoAutenticar)}`); // transforma JSON em String
+                console.log(`Resultados: ${JSON.stringify(resultadoAutenticar)}`);
 
                 if (resultadoAutenticar.length === 1) {
                     res.status(200).send("Autenticação bem-sucedida");
@@ -33,9 +33,9 @@ function autenticar(req, res) {
 
 function cadastrar(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
-    var nome = req.body.nomeServer;
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
+    var nome = req.body.nomeServer;
     var cpf = req.body.cpfServer;
 
     // Faça as validações dos valores
@@ -50,7 +50,7 @@ function cadastrar(req, res) {
     }else{
 
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.cadastrar(email, nome, senha, cpf)
+        usuarioModel.cadastrar(email, senha, nome, cpf)
             .then(
                 function (resultado) {
                     res.json(resultado);
