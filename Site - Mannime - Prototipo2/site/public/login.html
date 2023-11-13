@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/login.css">
+    <script src="./js/sessao.js"></script>
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <h1 class="titulo"><img src="img/Icon.png">Mannime Library</h1>
+        </div>
+    </div>
+    <section class="content">
+        <div class="boxes">
+            <div class="box">
+                <div class="Entrada">
+                    <h4>Entre com sua Conta</h4><br>
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email_input" placeholder="Digite seu e-mail">
+                </div><br><br>
+                <div class="Entrada">
+                    <label for="senha">Senha</label>
+                    <input type="password" id="senha_input" placeholder="Digite sua senha"><br><br>
+                    <div class="botoes">
+                        <button onclick="autenticar()">
+                            Entrar
+                        </button><br><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
+
+<script>
+    function autenticar() {
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+
+        if (emailVar == "" || senhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("./usuario/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        })
+    }
+</script>
