@@ -1,30 +1,14 @@
 var mysql = require("mssql");
 
 var mySqlConfig = {
-    host: "localhost",
+    host: "localhost: 3306",
     database: "Mannime",
     user: "root",
     password: "root"
 };
 
 function cadastrar(instrucao) {
-    // VERIFICA A VARIÁVEL DE AMBIENTE SETADA EM app.js
-    if (process.env.AMBIENTE_PROCESSO == "producao") {
-        return new Promise(function (resolve, reject) {
-            sql.connect(sqlServerConfig).then(function () {
-                return sql.query(instrucao);
-            }).then(function (resultados) {
-                console.log(resultados);
-                resolve(resultados.recordset);
-            }).catch(function (erro) {
-                reject(erro);
-                console.log('ERRO: ', erro);
-            });
-            sql.on('error', function (erro) {
-                return ("ERRO NO SQL SERVER (Azure): ", erro);
-            });
-        });
-    } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
+if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
         return new Promise(function (resolve, reject) {
             var conexao = mysql.createConnection(mySqlConfig);
             conexao.connect();

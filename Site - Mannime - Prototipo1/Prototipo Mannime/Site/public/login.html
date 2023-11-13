@@ -27,7 +27,7 @@
                     <label for="senha">Senha</label>
                     <input type="password" id="senha_input" placeholder="Digite sua senha"><br><br>
                     <div class="botoes">
-                        <button onclick="logarComConta()">
+                        <button onclick="autenticar()">
                             Entrar
                         </button><br><br>
                     </div>
@@ -40,7 +40,7 @@
 </html>
 
 <script>
-    function logarComConta() {
+    function autenticar() {
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
 
@@ -57,7 +57,7 @@
         console.log("FORM LOGIN: ", emailVar);
         console.log("FORM SENHA: ", senhaVar);
 
-        fetch("/usuario/autenticar", {
+        fetch("./usuario/autenticar", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

@@ -50,21 +50,21 @@
 <script>
 
     function cadastrar() {
-        var seuNome = int_nome.value;
-        var seuEmail = int_email.value;
-        var suaSenha = int_senha.value;
-        var seuCpf = int_cpf.value;
+        var nome = int_nome.value;
+        var email = int_email.value;
+        var senha = int_senha.value;
+        var cpf = int_cpf.value;
 
-        fetch("usuario/cadastrar", {
+        fetch("/usuario/cadastrar", {
             method: "POST",
             headers: {
                 "Content-type": "application/json",
             },
             body: JSON.stringify({
-                emailServer: seuEmail,
-                senhaServe: suaSenha,
-                nomeServer: seuNome,
-                cpfServe: seuCpf,
+                emailServer: email,
+                senhaServe: senha,
+                nomeServer: nome,
+                cpfServe: cpf,
             })
         })
     }
