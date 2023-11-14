@@ -1,7 +1,6 @@
 {
   "name": "web-data-viz",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
@@ -16,5 +15,8 @@
     "mysql2": "^2.2.5",
     "nodemon": "^2.0.7",
     "path": "^0.12.7"
-  }
+  },
+  "devDependencies": {},
+  "keywords": [],
+  "description": ""
 }
