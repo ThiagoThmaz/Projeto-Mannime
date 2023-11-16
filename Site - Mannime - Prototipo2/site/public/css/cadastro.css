@@ -46,12 +46,12 @@ body {
     background-color: #ffffff;
     padding: 20px;
     border: 3px black solid;
-    border-radius: 10px;
+    border-radius: 60px;
 }
 
 .box input{
     padding: 5px;
-    border-radius: 10px;
+    border-radius: 30px;
 }
 
 .box label{
@@ -66,7 +66,7 @@ body {
 .botoes button{
     margin: auto;
     padding: 10px;
-    border-radius: 20px;
+    border-radius: 40px;
     transition: 0.3s;
     cursor: pointer;
     background-color: white;
