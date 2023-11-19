@@ -5,8 +5,11 @@
 
 body {
     margin: 0;
-    background-image: url(https://w0.peakpx.com/wallpaper/219/648/HD-wallpaper-minimalist-minimalistic-anime.jpg);
-    background-size: auto;
+    background-image: url(https://wallpapercave.com/wp/wp5962492.jpg);
+    background-size: cover;
+}
+.Entrada img{
+    width: 60px;
 }
 
 .header {

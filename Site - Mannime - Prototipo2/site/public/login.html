@@ -22,12 +22,12 @@
                     <h4>Entre com sua Conta</h4><br>
                     <label for="email">E-mail</label>
                     <input type="email" id="email_input" placeholder="Digite seu e-mail">
-                </div><br><br>
+                </div><br>
                 <div class="Entrada">
                     <label for="senha">Senha</label>
                     <input type="password" id="senha_input" placeholder="Digite sua senha"><br><br>
-                    <div class="botoes">
-                        <button onclick="autenticar()">
+                    <div class="botoes"><br>
+                        <button onclick="entrar()">
                             Logar
                         </button><br><br>
                     </div>
@@ -40,13 +40,13 @@
 </html>
 
 <script>
-    function autenticar() {
+    function entrar() {
         // aguardar();
 
-        var emailVar = email_input.value;
-        var senhaVar = senha_input.value;
+        var email = email_input.value;
+        var senha = senha_input.value;
 
-        if (emailVar == "" || senhaVar == "") {
+        if (email == "" || senha == "") {
             cardErro.style.display = "block"
             mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
             finalizarAguardar();
@@ -56,8 +56,8 @@
         //     setInterval(sumirMensagem, 5000)
         // }
 
-        console.log("FORM LOGIN: ", emailVar);
-        console.log("FORM SENHA: ", senhaVar);
+        console.log("FORM LOGIN: ", email);
+        console.log("FORM SENHA: ", senha);
 
         fetch("/usuarios/autenticar", {
             method: "POST",
@@ -65,8 +65,8 @@
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                emailServer: emailVar,
-                senhaServer: senhaVar
+                emailServer: email,
+                senhaServer: senha
             })
         }).then(function (resposta) {
             console.log("ESTOU NO THEN DO entrar()!")

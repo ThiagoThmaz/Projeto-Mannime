@@ -5,8 +5,12 @@
 
 body {
     margin: 0;
-    background-image: url(https://i.pinimg.com/originals/c8/b9/a1/c8b9a19f3ea9f43f5a8d76916ef00495.png);
+    background-image: url(https://wallpapercave.com/wp/wp5962492.jpg);
     background-size: cover;
+}
+
+.botoes img{
+    width: 100px;
 }
 
 .header {
