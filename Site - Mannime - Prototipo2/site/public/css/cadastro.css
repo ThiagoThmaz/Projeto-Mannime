@@ -5,22 +5,47 @@
 
 body {
     margin: 0;
-    background-image: url(https://wallpapercave.com/wp/wp5962492.jpg);
+    background-image: url(https://images2.alphacoders.com/823/823422.png);
     background-size: cover;
 }
-.Entrada img{
+.botoes img{
     width: 60px;
 }
 
 .header {
+    display: flex;
     border-bottom: 3px solid #000000;
     background-color: white;
 }
 
 .header img{
+    margin-left: 50px;
     width: 50px;
     vertical-align: middle;
 }
+
+ul{
+    display: flex;
+    margin-left: 60%;
+}
+
+li a{
+    text-decoration: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+.header ul li{
+    color: blue;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: auto;
+    padding: 5px;
+    list-style-type: none;
+
+
+}
+
+
 
 .container {
     width: 80%;
@@ -48,7 +73,7 @@ body {
 .box{
     background-color: #ffffff;
     padding: 20px;
-    border: 3px black solid;
+    border: 3px green solid;
     border-radius: 60px;
 }
 
@@ -100,9 +125,14 @@ body {
     
 }
 
-#saida{
+#result{
     padding: 10px;
-    color: red;
+    color: rgb(0, 123, 255)(134, 36, 36);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#result i{
+    color: brown;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 

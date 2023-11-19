@@ -5,12 +5,12 @@
 
 body {
     margin: 0;
-    background-image: url(https://wallpapercave.com/wp/wp5962492.jpg);
+    background-image: url(https://images2.alphacoders.com/823/823422.png);
     background-size: cover;
 }
 
-.botoes img{
-    width: 100px;
+.Entrada img{
+    width: 50px;
 }
 
 .header {
@@ -49,7 +49,7 @@ body {
 .box{
     background-color: #ffffff;
     padding: 40px;
-    border: 3px black solid;
+    border: 3px green solid;
     border-radius: 60px;
 }
 
@@ -101,8 +101,13 @@ body {
     
 }
 
-#saida{
+#result{
     padding: 10px;
-    color: red;
+    color: rgb(0, 217, 255);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#result i{
+    color: rgb(0, 0, 0);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }

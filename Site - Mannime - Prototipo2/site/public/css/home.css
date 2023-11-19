@@ -1,24 +1,41 @@
 body {
     margin: 0;
-    background-image: url(https://w0.peakpx.com/wallpaper/219/648/HD-wallpaper-minimalist-minimalistic-anime.jpg);
+    background-image: url(https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77700092169.jpg);
     background-size: cover;
 }
 
 .header {
+    display: flex;
     background-color: white;
     border-bottom: 3px black solid;
-    margin: auto;
 }
 
-.header h1 {
-    padding-left: 100px;
-    padding: 20px;
+.header ul{
+    display: flex;
     margin: auto;
+
+}
+
+.header ul li{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    list-style-type: none;
+    color: blue;
+    padding: 5px;
+}
+
+li a{
+    text-decoration: none;
+}
+
+
+.header h1 {
+    padding-right: 60%;
+    margin-left: 50px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .header img {
-    width: 50px;
+    width: 45px;
     vertical-align: middle;
 }
 
@@ -51,7 +68,7 @@ body {
 }
 
 .box:hover{
-    background-color: brown;
+    background-color: rgb(99, 69, 69);
     color: white;
     padding: 10px;
     cursor: pointer;

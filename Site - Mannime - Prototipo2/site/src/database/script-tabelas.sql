@@ -8,3 +8,4 @@ email varchar(45),
 senha varchar(45),
 cpf char(11));
 
+select * from usuario;

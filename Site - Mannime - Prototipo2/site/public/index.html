@@ -5,14 +5,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="./js/sessao.js"></script>
+  <link rel="Icon" href="img/Icon.png">
   <link rel="stylesheet" href="./css/cadastro.css">
   <title>Cadastro</title>
 </head>
 
 <body>
   <div class="header">
-    <div class="container">
-      <h1 class="titulo"><img src="img/Icon.png">Mannime Library</h1>
+    <h1><img src="img/Icon.png">Mannime Library</h1>
+    <ul>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="home.html">Home /</a></li>
+        <li class="Cadastro">Cadastro</li>
+    </ul>
+</div>
     </div>
   </div>
   <section class="content">
@@ -39,7 +45,9 @@
           <button onclick="cadastrar()">
             Cadastrar
           </button><br><br>
-          <img src="img/Anime.png" alt="">
+        </div>
+        <div id="result">
+
         </div>
       </div>
     </div>
@@ -65,9 +73,8 @@
       senhaVar == "" ||
       cpfVar == ''
     ) {
+      result.innerHTML = "<i>Sem campos..<i>";
       cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "(Mensagem de erro para todos os campos em branco)";
 
       finalizarAguardar();
       return false;
@@ -116,14 +123,17 @@
         .then(function (resposta) {
           console.log("resposta: ", resposta);
 
-          if (resposta.ok) {
-
+          
+          if (resposta.ok) { 
+            
+            result.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+            
             setTimeout(() => {
               window.location = "/login.html";
             }, 2000);
 
-            limparFormulario();
             finalizarAguardar();
+            //  limparFormulari 
           } else {
             throw "Houve um erro ao tentar realizar o cadastro!";
           }

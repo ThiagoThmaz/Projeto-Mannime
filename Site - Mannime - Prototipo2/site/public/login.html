@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/login.css">
+    <link rel="Icon" href="img/Icon.png">
     <script src="./js/sessao.js"></script>
     <title>Login</title>
 </head>
@@ -29,7 +30,10 @@
                     <div class="botoes"><br>
                         <button onclick="entrar()">
                             Logar
-                        </button><br><br>
+                        </button><br>
+                    </div>
+                    <div id="result">
+
                     </div>
                 </div>
             </div>
@@ -47,8 +51,8 @@
         var senha = senha_input.value;
 
         if (email == "" || senha == "") {
+            result.innerHTML = "<i>Mensagem de erro para todos os campos em branco<i>";
             cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
             finalizarAguardar();
             return false;
         }
@@ -73,6 +77,8 @@
 
             if (resposta.ok) {
                 console.log(resposta);
+
+                result.innerHTML = "Bem Vindo a Mannime Library"
 
                 resposta.json().then(json => {
                     console.log(json);
