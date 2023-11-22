@@ -9,3 +9,11 @@ senha varchar(45),
 cpf char(11));
 
 select * from usuario;
+
+Create table quiz(
+    idQuiz int primary key auto_increment,
+    pontos char(10),
+    acore char(10),
+    fkCadastro int,
+	constraint fkCadast foreign key
+    (fkCadastro) references usuario(idCadastro));

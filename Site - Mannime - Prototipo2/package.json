@@ -6,5 +6,8 @@
     "start": "node ./site/app.js",
     "dev": "cd site && npm run dev",
     "postinstall": "cd site && npm install"
+  },
+  "dependencies": {
+    "req": "^0.1.4"
   }
 }

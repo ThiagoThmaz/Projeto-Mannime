@@ -1,0 +1,75 @@
+*{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url(https://xtremedivider.files.wordpress.com/2012/11/naruto-3712551-1.jpg);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+#quiz-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 3px black solid;
+}
+
+#quiz-container img{
+    width: 50px;
+    margin-left: 45%;
+}
+
+h2 {
+    color: #333;
+    text-align: center;
+}
+
+fieldset {
+    margin-bottom: 20px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+legend {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+#submit-btn {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #000000;
+    color: #fff;
+    border: 3px black solid;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+#result {
+    text-align: center;
+    font-size: 1.2em;
+    margin-top: 20px;
+    color: #333;
+}
+
+

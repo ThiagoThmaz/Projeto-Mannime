@@ -73,7 +73,7 @@ li a{
 .box{
     background-color: #ffffff;
     padding: 20px;
-    border: 3px green solid;
+    border: 3px rgb(0, 0, 0) solid;
     border-radius: 60px;
 }
 
@@ -132,7 +132,7 @@ li a{
 }
 
 #result i{
-    color: brown;
+    color: rgb(0, 0, 0);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 

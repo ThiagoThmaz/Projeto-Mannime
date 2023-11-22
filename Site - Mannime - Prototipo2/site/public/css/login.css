@@ -14,14 +14,38 @@ body {
 }
 
 .header {
+    display: flex;
     border-bottom: 3px solid #000000;
     background-color: white;
 }
 
 .header img{
+    margin-left: 50px;
     width: 50px;
     vertical-align: middle;
 }
+
+ul{
+    display: flex;
+    margin-left: 60%;
+}
+
+li a{
+    text-decoration: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+.header ul li{
+    color: blue;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: auto;
+    padding: 5px;
+    list-style-type: none;
+
+
+}
+
 
 .container {
     width: 80%;
@@ -49,7 +73,7 @@ body {
 .box{
     background-color: #ffffff;
     padding: 40px;
-    border: 3px green solid;
+    border: 3px rgb(0, 0, 0) solid;
     border-radius: 60px;
 }
 
@@ -103,7 +127,7 @@ body {
 
 #result{
     padding: 10px;
-    color: rgb(0, 217, 255);
+    color: rgb(0, 0, 0);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 

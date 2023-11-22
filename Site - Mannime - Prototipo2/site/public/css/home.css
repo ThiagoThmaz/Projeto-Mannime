@@ -68,7 +68,7 @@ li a{
 }
 
 .box:hover{
-    background-color: rgb(99, 69, 69);
+    background-color: rgb(94, 88, 88);
     color: white;
     padding: 10px;
     cursor: pointer;
