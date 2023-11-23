@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/quiz.css">
+    <link rel="Icon" href="img/Icon.png">
+    <title>Quiz Mannime</title>
+
+<body>
+    <div id="quiz-container">
+        <img src="./img/Icon.png">
+        <h2>Quiz de Anime e Mangá</h2>
+        <form id="quiz-form">
+            <!-- Perguntas sobre Anime -->
+            <fieldset>
+                <legend>Perguntas sobre Anime</legend>
+                <label>1. Quem é o protagonista de "Naruto"?<br><br>
+                    <input type="radio" name="q1" value="a"> Goku <br><br>
+                    <input type="radio" name="q1" value="b"> Luffy <br><br>
+                    <input type="radio" id="int_c" name="q1" value="c"> Naruto <br><br>
+                </label><br>
+
+                <label>2. Qual é o nome do robô gigante em "Neon Genesis Evangelion"?<br><br>
+                    <input type="radio" name="q2" value="a"> Gundam <br><br>
+                    <input type="radio" name="q2" value="b"> Unidade EVA-01 <br><br>
+                    <input type="radio" name="q2" value="c"> Megazord <br><br>
+                </label><br>
+
+                <label>3. Em "One Piece", qual é o objetivo final de Luffy?<br><br>
+                    <input type="radio" name="q3" value="a"> Tornar-se o Rei dos Piratas <br><br>
+                    <input type="radio" name="q3" value="b"> Encontrar o One Piece <br><br>
+                    <input type="radio" name="q3" value="c"> Tornar-se o Hokage <br><br>
+                </label><br>
+
+                <label>4. Quem é o criador de "Dragon Ball"?<br><br>
+                    <input type="radio" name="q4" value="a"> Masashi Kishimoto <br><br>
+                    <input type="radio" name="q4" value="b"> Akira Toriyama <br><br>
+                    <input type="radio" name="q4" value="c"> Eiichiro Oda <br><br>
+                </label><br>
+
+                <label>5. Qual é o tema principal de "Attack on Titan"?<br><br>
+                    <input type="radio" name="q5" value="a"> Piratas <br><br>
+                    <input type="radio" name="q5" value="b"> Ninjas <br><br>
+                    <input type="radio" name="q5" value="c"> Titãs <br><br>
+                </label><br>
+            </fieldset>
+
+            <!-- Perguntas sobre Mangá -->
+            <fieldset>
+                <legend>Perguntas sobre Mangá</legend>
+                <label>6. Qual mangá segue a história de Edward e Alphonse Elric?<br><br>
+                    <input type="radio" name="q6" value="a"> Bleach <br><br>
+                    <input type="radio" name="q6" value="b"> Fullmetal Alchemist <br><br>
+                    <input type="radio" name="q6" value="c"> My Hero Academia <br><br>
+                </label><br>
+
+                <label>7. Em "Death Note", quem é o personagem principal que possui o Death Note?<br><br>
+                    <input type="radio" name="q7" value="a"> L <br><br>
+                    <input type="radio" name="q7" value="b"> Light Yagami <br><br>
+                    <input type="radio" name="q7" value="c"> Near <br><br>
+                </label><br>
+
+                <label>8. Qual é o nome do tesouro dos piratas em "One Piece"?<br><br>
+                    <input type="radio" name="q8" value="a"> Grand Line <br><br>
+                    <input type="radio" name="q8" value="b"> Red Line <br><br>
+                    <input type="radio" name="q8" value="c"> One Piece <br><br>
+                </label><br>
+
+                <label>9. Quem é o autor de "One Punch Man"?<br><br>
+                    <input type="radio" name="q9" value="a"> Hajime Isayama <br><br>
+                    <input type="radio" name="q9" value="b"> ONE <br><br>
+                    <input type="radio" name="q9" value="c"> Kohei Horikoshi <br><br>
+                </label><br>
+
+                <label>10. Qual é o gênero de "Nausicaä do Vale do Vento"?<br><br>
+                    <input type="radio" name="q10" value="a"> Fantasia <br><br>
+                    <input type="radio" name="q10" value="b"> Sci-Fi <br><br>
+                    <input type="radio" name="q10" value="c"> Aventura <br><br>
+                </label><br>
+            </fieldset>
+
+            <input type="button" id="submit-btn" value="Enviar" onclick="calcular()">
+        </form>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function calcular() {
+            let score = 0;
+            const answers = ["c", "b", "a", "b", "c", "b", "b", "a", "b", "a"];
+
+
+            for (let i = 1; i <= 10; i++) {
+                const selectedAnswer = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selectedAnswer) {
+                    if (selectedAnswer.value === answers[i - 1]) {
+                        score++;
+                    }
+                }
+            }
+
+            const resultContainer = document.getElementById("result");
+            resultContainer.innerHTML = `Sua pontuação é: ${score} de 10.`;
+
+            const formData = new FormData(document.getElementById('quiz-form'));
+            fetch("/quiz/calcular", {
+                method: 'POST',
+                headers: {
+                "Content-Type": "application/json"
+            },body: JSON.stringify({
+                scoreServer: score,
+                answersServer: answers,
+                idServer: sessionStorage.ID_USUARIO,
+            })
+
+            })
+                .then(response => response.text())
+                .then(data => console(data))
+                .catch(error => console('Error submitting score: ', error));
+
+
+        }
+    </script>
+
+</body>
+
+</html>

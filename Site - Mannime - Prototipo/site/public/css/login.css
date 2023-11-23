@@ -1,0 +1,137 @@
+
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    margin: 0;
+    background-image: url(https://images2.alphacoders.com/823/823422.png);
+    background-size: cover;
+}
+
+.Entrada img{
+    width: 50px;
+}
+
+.header {
+    display: flex;
+    border-bottom: 3px solid #000000;
+    background-color: white;
+}
+
+.header img{
+    margin-left: 50px;
+    width: 50px;
+    vertical-align: middle;
+}
+
+ul{
+    display: flex;
+    margin-left: 60%;
+}
+
+li a{
+    text-decoration: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+.header ul li{
+    color: blue;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: auto;
+    padding: 5px;
+    list-style-type: none;
+
+
+}
+
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+.container h1{
+    text-align: center;
+    margin: auto;
+    padding: 15px;
+}
+
+
+.header .container {
+    justify-content: space-between;
+}
+
+.boxes{
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+    width: 20%;
+}
+
+.box{
+    background-color: #ffffff;
+    padding: 40px;
+    border: 3px rgb(0, 0, 0) solid;
+    border-radius: 60px;
+}
+
+.box input{
+    padding: 5px;
+    border-radius: 40px;
+}
+
+.box label{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.botoes{
+    gap: 30px;
+    border-radius: 10px;
+}
+
+.botoes button{
+    margin: auto;
+    padding: 10px;
+    border-radius: 20px;
+    transition: 0.3s;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+}
+
+.botoes button:hover{
+    padding: 15px;
+    background-color: #000000;
+    color: white;
+}
+
+.Entrada h4{
+    text-align: center;
+    margin: auto;
+    padding: 2px;
+}
+
+.botoes a{
+    text-decoration: none;
+    color: #000000;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transition: 0.3s;
+}
+
+.botoes a:hover{
+    color: rgb(36, 144, 121);
+    
+}
+
+#result{
+    padding: 10px;
+    color: rgb(0, 0, 0);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#result i{
+    color: rgb(0, 0, 0);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

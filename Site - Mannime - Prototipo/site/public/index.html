@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="./js/sessao.js"></script>
+  <link rel="Icon" href="img/Icon.png">
+  <link rel="stylesheet" href="./css/cadastro.css">
+  <title>Cadastro</title>
+</head>
+
+<body>
+  <div class="header">
+    <h1><img src="img/Icon.png">Mannime Library</h1>
+    <ul>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="home.html">Home /</a></li>
+        <li class="Cadastro">Cadastro</li>
+    </ul>
+</div>
+    </div>
+  </div>
+  <section class="content">
+    <div class="boxes">
+      <div class="box">
+        <div class="Entrada">
+          <h4>Faça seu Cadastro</h4><br>
+          <label for="title">Digite seu Nome</label>
+          <input type="text" id="nome_input" placeholder="Digite seu Nome">
+        </div><br>
+        <div class="Entrada">
+          <label for="email">Digite um E-mail</label>
+          <input type="email" id="email_input" placeholder="Digite seu e-mail">
+        </div><br>
+        <div class="Entrada">
+          <label for="senha">Digite uma Senha</label>
+          <input type="password" id="senha_input" placeholder="Digite sua senha">
+        </div>
+        <div class="Entrada"><br>
+          <label for="cpf">Informe seu CPF</label>
+          <input type="cpf" id="input_cpf" placeholder="Digite seu CPF">
+        </div><br>
+        <div class="botoes">
+          <button onclick="cadastrar()">
+            Cadastrar
+          </button><br><br>
+        </div>
+        <div id="result">
+
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+</body>
+
+</html>
+
+<script>
+  function cadastrar() {
+    //aguardar();
+    //Reupere o valor da nova input pelo nome do id
+    // Agora vá para o método fetch logo abaixo
+    var nomeVar = nome_input.value;
+    var emailVar = email_input.value;
+    var senhaVar = senha_input.value;
+    var cpfVar = input_cpf.value;
+
+    if (
+      nomeVar == "" ||
+      emailVar == "" ||
+      senhaVar == "" ||
+      cpfVar == ''
+    ) {
+      result.innerHTML = "<i>Sem campos..<i>";
+      cardErro.style.display = "block";
+
+      finalizarAguardar();
+      return false;
+    } if (nomeVar < 1) {
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "(Nome Fraco)";
+      finalizarAguardar();
+      return false;
+    } else if (emailVar.indexOf('@') == -1) {
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "(Email Invalido)";
+      finalizarAguardar();
+      return false;
+    } else if (senhaVar < 6) {
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "(Senha Fraca)";
+      finalizarAguardar();
+      return false;
+    } else if (cpfVar == 11) {
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "(CPF Invalido)";
+      finalizarAguardar();
+      return false;
+    } else {
+      //  setInterval(sumirMensagem, 5000);
+
+      // Enviando o valor da nova input
+      fetch("/usuarios/cadastrar", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          // crie um atributo que recebe o valor recuperado aqui
+          // Agora vá para o arquivo routes/usuario.js
+          nomeServer: nomeVar,
+          emailServer: emailVar,
+          senhaServer: senhaVar,
+          cpfServer: cpfVar,
+        }),
+      })
+        .then(function (resposta) {
+          console.log("resposta: ", resposta);
+
+          
+          if (resposta.ok) { 
+            
+            result.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+            
+            setTimeout(() => {
+              window.location = "/login.html";
+            }, 2000);
+
+            finalizarAguardar();
+            //  limparFormulari 
+          } else {
+            throw "Houve um erro ao tentar realizar o cadastro!";
+          }
+        })
+
+      function listar() {
+        fetch("/empresas/listar", {
+          method: "GET",
+        })
+          .then(function (resposta) {
+            resposta.json().then((empresas) => {
+              empresas.forEach((empresa) => {
+                listaEmpresas.innerHTML += `<option value='${empresa.id}'>${empresa.cnpj}</option>`;
+              });
+            });
+          })
+          .catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+          });
+      }
+      // function sumirMensagem() {
+      //   if (cardErro) {
+      //     cardErro.style.display = "none";
+      //   } else {
+      //     console.error("cardErro is not defined or null");
+      //   }
+    }
+
+
+  }
+
+</script>

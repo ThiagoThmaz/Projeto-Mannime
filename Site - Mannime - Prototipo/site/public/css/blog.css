@@ -1,0 +1,137 @@
+*{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url(https://e0.pxfuel.com/wallpapers/271/995/desktop-wallpaper-berserk-manga-for-tech-berserk-minimalist.jpg);
+    background-size: auto;
+}
+
+.Header {
+    background-color: rgb(255, 255, 255);
+    border-bottom: 20px black;
+    color: rgb(0, 0, 0);
+    border-bottom: 3px solid #000000;
+    text-align: center;
+    padding: 15px;
+}
+
+.Header h1{
+    margin: 0;
+}
+
+.Header img {
+    width: 50px;
+    vertical-align: middle;
+}
+
+.content {
+    background-size: cover;
+    border-radius: 20px;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.about {
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px 0;
+    border: 3px solid rgb(0, 0, 0);
+
+}
+
+
+.about img{
+    width: 150px;
+    height: 150px;
+    margin-right: 20px;
+    border-radius: 20px;
+}
+
+.about h2, .examples h2 {
+    color: black;
+    text-align: center;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+}
+
+.info img {
+    width: 150px;
+    height: 150px;
+    margin-right: 20px;
+}
+
+.examples {
+    background-color: white;
+    border: 3px solid rgb(0, 0, 0);
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.anime {
+    display: flex;
+    align-items: center;
+}
+
+.anime img {
+    padding: 10px;
+    width: 150px;
+    height: 190px;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.anime img:hover{
+    transform: scale(1.1);
+}
+
+.autor{
+    height: 120px;
+    width: 120px;
+    transition: 0.3s;
+}
+
+.autor:hover{
+    transform: scale(1.1);
+}
+
+h3{
+    padding: 20px;
+    text-align: center;
+}
+
+.botaoida{
+    text-align: center;
+    width: auto;
+    padding: 20px;
+    border-radius: 10px;
+    
+
+}
+
+.botaoida a{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: none;
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.botaoida a:hover {
+    padding: 15px;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+}
+

@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    background-image: url(https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77700092169.jpg);
+    background-size: cover;
+}
+
+.header {
+    display: flex;
+    background-color: white;
+    border-bottom: 3px black solid;
+}
+
+.header ul{
+    display: flex;
+    margin: auto;
+
+}
+
+.header ul li{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    list-style-type: none;
+    color: blue;
+    padding: 5px;
+}
+
+li a{
+    text-decoration: none;
+}
+
+
+.header h1 {
+    padding-right: 60%;
+    margin-left: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.header img {
+    width: 45px;
+    vertical-align: middle;
+}
+
+.content .boxes{
+    justify-content: space-around;
+    display: flex;
+    margin: auto;
+    padding: 50px;
+    width: 80%;
+    border-radius: 20px;
+}
+
+.content h1{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    text-shadow: black ;
+
+}
+
+.boxes a{
+    text-decoration: none;
+    color: black;
+}
+
+.box{
+    background-color: white;
+    border: 2px black solid;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+
+.box:hover{
+    background-color: rgb(94, 88, 88);
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.box h3{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+}
+
+.box img{
+    height: 200px;
+    margin: 40px;
+}
+
+.box p{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+}
+
+
+

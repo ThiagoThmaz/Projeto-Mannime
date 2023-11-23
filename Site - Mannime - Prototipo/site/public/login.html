@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="Icon" href="img/Icon.png">
+    <script src="./js/sessao.js"></script>
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1><img src="img/Icon.png">Mannime Library</h1>
+        <ul>
+            <li><a href="index.html">Cadastro</a></li>
+            <li><a href="home.html">Home /</a></li>
+            <li class="Login">Login</li>
+        </ul>
+    </div>
+    <section class="content">
+        <div class="boxes">
+            <div class="box">
+                <div class="Entrada">
+                    <h4>Entre com sua Conta</h4><br>
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email_input" placeholder="Digite seu e-mail">
+                </div><br>
+                <div class="Entrada">
+                    <label for="senha">Senha</label>
+                    <input type="password" id="senha_input" placeholder="Digite sua senha"><br><br>
+                    <div class="botoes"><br>
+                        <button onclick="entrar()">
+                            Logar
+                        </button><br>
+                    </div>
+                    <div id="result">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
+
+<script>
+    function entrar() {
+        // aguardar();
+
+        var email = email_input.value;
+        var senha = senha_input.value;
+
+        if (email == "" || senha == "") {
+            result.innerHTML = "<i>Mensagem de erro para todos os campos em branco<i>";
+            cardErro.style.display = "block"
+            finalizarAguardar();
+            return false;
+        }
+        // else {
+        //     setInterval(sumirMensagem, 5000)
+        // }
+
+        console.log("FORM LOGIN: ", email);
+        console.log("FORM SENHA: ", senha);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: email,
+                senhaServer: senha
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                result.innerHTML = "Bem Vindo a Mannime Library"
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.SENHA_USUARIO = json.senha;
+                    sessionStorage.ID_USUARIO = json.id;
+                    sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
+
+
+                    setTimeout(function () {
+                        window.location = "/home.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+    // function sumirMensagem() {
+    //     cardErro.style.display = "none"
+    // }
+
+</script>
