@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="img/Icon.png">
+  <title>DashBoard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/8aa52da4-91f9-4905-abe2-583c5c3e3c66/d6oggxt-bc48c6bc-9179-45c0-99f2-ca8f54a9fbb9.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzhhYTUyZGE0LTkxZjktNDkwNS1hYmUyLTU4M2M1YzNlM2M2NlwvZDZvZ2d4dC1iYzQ4YzZiYy05MTc5LTQ1YzAtOTlmMi1jYThmNTRhOWZiYjkucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.8KZ4xyaoQi6VhD7CowgbKYIn5ULrT2M8hkB8n6QnAQM');
+      background-size: cover;
+    }
+
+    * {
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    .char {
+      margin: auto;
+      width: 80%; /* Adjusted width */
+      height: 80vh; /* Adjusted height */
+    }
+
+    .chars {
+      border-radius: 20px;
+      border: 3px black solid;
+      box-shadow: 3px 3px 4px;
+      background-color: white;
+      width: 90%;
+      margin: auto;
+      padding: 20px;
+    }
+
+    a {
+      margin-left: 45%;
+      padding: 10px;
+      color: rgb(0, 0, 0);
+      text-decoration: none;
+      border-radius: 20px;
+      background-color: rgb(255, 255, 255);
+      border: 3px black solid;
+      transition: 0.4s;
+    }
+
+    a:hover {
+      color: white;
+      background-color: black;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="content">
+    <div class="chars">
+      <div class="char">
+        <canvas id="myChart"></canvas>
+      </div>
+      <a href="quiz.html">Tentar Novamente</a>
+    </div>
+  </div>
+
+  <script>
+    const ctx = document.getElementById('myChart').getContext('2d');
+    
+
+    var grafico = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: [],
+        datasets: [{
+          label: 'Veja sua Pontuação',
+          data: [],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+
+  </script>
+
+  <script>
+   function analisar(){
+    let score = 0;
+    fetch("/dados/buscar",{
+      method:'post',
+      headers:{
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        scoreServer: score,
+        idServer: sessionStorage.ID_USUARIO,
+      })
+
+    }).then(function(res){
+      res.json().then(function(json){
+        console.log(json)
+        if(json[json.length - 2] != undefined){
+          grafico.data.datasets[0].data.push(Number(json[json.length - 2].pontos))
+          grafico.data.labels.push('Tentativa Anterior')
+        }
+          // grafico.data.datasets[0].data.push(Number(json[json.length - 2].pontos))
+          grafico.data.datasets[0].data.push(Number(json[json.length - 1].pontos))
+          grafico.data.labels.push('Tentativa Atual')
+          // grafico.data.labels.push('Tentativa Anterior')
+          grafico.update()
+      })
+    })
+   }
+
+   analisar()
+  </script>
+

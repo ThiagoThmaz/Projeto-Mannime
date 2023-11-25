@@ -4,7 +4,7 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-image: url(https://xtremedivider.files.wordpress.com/2012/11/naruto-3712551-1.jpg);
+    background-image: url(https://64.media.tumblr.com/f7a029c93f58711ea5e1c52821cc63c1/8c635f7c9d00d7c2-33/s1280x1920/15f05b5efed9ce7edd664ddbc3c9c3f99ca14681.png);
     margin: 0;
     padding: 0;
     display: flex;
@@ -18,6 +18,7 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 3px 3px 4px black;
     border: 3px black solid;
 }
 
@@ -71,5 +72,7 @@ input[type="radio"] {
     margin-top: 20px;
     color: #333;
 }
+
+ 
 
 

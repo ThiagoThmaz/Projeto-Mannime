@@ -5,7 +5,7 @@
 
 body {
     margin: 0;
-    background-image: url(https://images2.alphacoders.com/823/823422.png);
+    background-image: url(https://moewalls.com/wp-content/uploads/2023/04/manga-anime-collection-thumb.jpg);
     background-size: cover;
 }
 .botoes img{
@@ -30,13 +30,14 @@ ul{
 }
 
 li a{
+    color: #000000;
     text-decoration: none;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 
 .header ul li{
-    color: blue;
+    color: rgb(0, 0, 0);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin: auto;
     padding: 5px;
@@ -74,6 +75,7 @@ li a{
     background-color: #ffffff;
     padding: 20px;
     border: 3px rgb(0, 0, 0) solid;
+    box-shadow: 3px 3px 4px black;
     border-radius: 60px;
 }
 

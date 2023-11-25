@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background-image: url(https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77700092169.jpg);
+    background-image: url(https://c.wallhere.com/photos/49/47/manga_anime_games-1950769.jpg!d);
     background-size: cover;
 }
 
@@ -19,11 +19,12 @@ body {
 .header ul li{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     list-style-type: none;
-    color: blue;
+    color: rgb(0, 0, 0);
     padding: 5px;
 }
 
 li a{
+    color: #000000;
     text-decoration: none;
 }
 
@@ -65,6 +66,7 @@ li a{
     border: 2px black solid;
     border-radius: 20px;
     transition: 0.5s;
+    box-shadow: 3px 3px 4px black;
 }
 
 .box:hover{

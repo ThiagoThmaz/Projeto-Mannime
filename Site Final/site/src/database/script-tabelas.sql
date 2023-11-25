@@ -21,3 +21,4 @@ Create table quiz(
     describe quiz;
     
     select * from quiz;
+

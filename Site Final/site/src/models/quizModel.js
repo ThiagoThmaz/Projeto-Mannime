@@ -6,6 +6,13 @@ function calcular(ponto, acore, idUser){
     return database.executar(instrucao)
 }
 
-module.exports = {
-    calcular
+function buscarDados(ponto, idUser){
+    var instrucao = `Select * From quiz;`
+    return database.executar(instrucao)
 }
+
+module.exports = {
+    calcular,
+    buscarDados
+}
+

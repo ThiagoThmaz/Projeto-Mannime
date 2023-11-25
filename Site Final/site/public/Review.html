@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="Icon" href="img/Icon.png">
+  <link rel="stylesheet" href="css/review.css">
+  <title>Mangá vs. Anime</title>
+</head>
+<body>
+
+  <h1>Qual e melhor?: Mangá ou Anime?</h1>
+
+  <form id="reviewForm">
+    <img style="width: 150px;" src="./img/jujut.png" alt="">
+    <label>
+      <input id="int_anime" type="radio" name="choice" value="manga"> Mangá
+    </label>
+    <label>
+      <input id ]="int_manga" type="radio" name="choice" value="anime"> Anime
+    </label>
+    <button type="button" onclick="exibirReview()">Enviar</button>
+  </form>
+
+  <div id="result"></div>
+
+  <script>
+    function exibirReview() {
+      var escolha = document.querySelector('input[name="choice"]:checked');
+
+      if (escolha) {
+        var resultadoDiv = document.getElementById('result');
+        resultadoDiv.innerHTML = "Você escolheu " + escolha.value + ". ";
+
+        if (escolha.value === 'manga') {
+          resultadoDiv.innerHTML = "Você escolheu o Mangá";
+        } else {
+          resultadoDiv.innerHTML = "Você escolheu o Anime";
+        }
+      } else {
+        alert("Por favor, faça uma escolha antes de enviar!");
+      }
+
+      
+    }
+  </script>
+
+</body>
+</html>

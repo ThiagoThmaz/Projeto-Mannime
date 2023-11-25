@@ -16,7 +16,23 @@ function calcular(req, res) {
         });
 }
 
+function buscarDados(req, res){
+    var ponto = req.body.scoreServer;
+    var idUser = req.body.idServer;
+
+    quizModel.buscarDados(ponto, idUser)
+        .then(function (resultado) {
+            res.json(resultado);
+        })
+        .catch(function (erro) {
+            console.error(erro);
+            console.error("\nHouve um erro ao realizar o cadastro! Erro: ", erro.sqlMessage);
+            res.status(500).json(erro.sqlMessage);
+        });
+}
+
 module.exports = {
-    calcular
+    calcular,
+    buscarDados
 };
 

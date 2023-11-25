@@ -8,6 +8,7 @@
     "postinstall": "cd site && npm install"
   },
   "dependencies": {
+    "middleware": "^1.0.0",
     "req": "^0.1.4"
   }
 }
