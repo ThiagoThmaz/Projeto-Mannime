@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/quiz.css">
     <link rel="Icon" href="img/Icon.png">
+    <script src="./js/sessao.js"></script>
     <title>Quiz Mannime</title>
 
 <body>
     <div id="quiz-container">
         <img src="./img/Icon.png">
+            <h3 style="margin-left: 40%;"> Olá <span id="b_usuario">Usuario</span></h3>
         <h2>Quiz de Anime e Mangá</h2>
         <form id="quiz-form">
             <!-- Perguntas sobre Anime -->
@@ -63,9 +65,9 @@
                 </label><br>
 
                 <label>8. Qual é o nome do tesouro dos piratas em "One Piece"?<br><br>
-                    <input type="radio" name="q8" value="a"> Grand Line <br><br>
+                    <input type="radio" name="q8" value="a"> One Piece <br><br>
                     <input type="radio" name="q8" value="b"> Red Line <br><br>
-                    <input type="radio" name="q8" value="c"> One Piece <br><br>
+                    <input type="radio" name="q8" value="c"> Grand Line <br><br>
                 </label><br>
 
                 <label>9. Quem é o autor de "One Punch Man"?<br><br>
@@ -88,6 +90,8 @@
     </div>
 
     <script>
+            var nome = sessionStorage.NOME_USUARIO;
+            b_usuario.innerHTML = nome;
         function enviar() {
             let score = 0;
             const answers = ["c", "b", "a", "b", "c", "b", "b", "a", "b", "a"];
@@ -103,6 +107,12 @@
 
             const resultContainer = document.getElementById("result");
             resultContainer.innerHTML = `Sua pontuação é: ${score} de 10.`;
+
+            if(score > 5){
+                resultContainer.innerHTML = `Sua pontuação é: ${score} de 10.,<br>Vc possui Conhecimento.`
+            }else{
+                resultContainer.innerHTML = `Vc não possui Conhecimento.<br>Sua pontuação é: ${score} de 10.`
+            }
 
             const formData = new FormData(document.getElementById('quiz-form'));
             fetch("/quiz/calcular", {
