@@ -85,7 +85,6 @@
 
             <input type="button" id="submit-btn" value="Enviar" onclick="enviar()">
         </form>
-
         <div id="result"></div>
     </div>
 
@@ -109,7 +108,7 @@
             resultContainer.innerHTML = `Sua pontuação é: ${score} de 10.`;
 
             if(score > 5){
-                resultContainer.innerHTML = `Sua pontuação é: ${score} de 10.,<br>Vc possui Conhecimento.`
+                resultContainer.innerHTML = `Sua pontuação é: ${score} de 10.<br>Vc possui Conhecimento.`
             }else{
                 resultContainer.innerHTML = `Vc não possui Conhecimento.<br>Sua pontuação é: ${score} de 10.`
             }

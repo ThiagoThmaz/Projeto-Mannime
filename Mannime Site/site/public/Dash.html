@@ -102,14 +102,16 @@
     }).then(function(res){
       res.json().then(function(json){
         console.log(json)
+        if(json[json.length - 3] != undefined){
+          grafico.data.datasets[0].data.push(Number(json[json.length - 3].pontos))
+          grafico.data.labels.push('Tentativa Posterior')
+        }
         if(json[json.length - 2] != undefined){
           grafico.data.datasets[0].data.push(Number(json[json.length - 2].pontos))
           grafico.data.labels.push('Tentativa Anterior')
         }
-          // grafico.data.datasets[0].data.push(Number(json[json.length - 2].pontos))
           grafico.data.datasets[0].data.push(Number(json[json.length - 1].pontos))
           grafico.data.labels.push('Tentativa Atual')
-          // grafico.data.labels.push('Tentativa Anterior')
           grafico.update()
       })
     })
